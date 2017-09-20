@@ -22,6 +22,8 @@
 
 This tool is a Sublime Text wrapper around django `manage.py` commands.
 
+This is a fork of original django commands. here I fix the osx bug -- Terminal not found
+
 ### So you can create new `Django` projects and apps directly from Sublime text like this
 
 ![new project](http://i.giphy.com/3oKIPjMXcl4xWh4Y8M.gif "New project screen")
