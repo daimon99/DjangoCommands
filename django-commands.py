@@ -177,7 +177,13 @@ class CommandThread(threading.Thread):
                 '-e', 'bash -c \"{0}; read line\"'.format(command)
             ]
         if PLATFORM == 'Darwin':
-            command = ["open", "-a", TERMINAL].extend(command)
+            # command = ["open", "-a", TERMINAL].extend(command)
+             command = [
+                'osascript',
+                '-e', 'tell application "iTerm"',
+                '-e', 'tell current window to create tab with profile "Default" command "{0}"'.format(command),
+                '-e', 'end tell'
+            ]
 
         log('Command is : {0}'.format(str(command)))
         try:
